@@ -1,18 +1,14 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png" />
-    <HelloWorld msg="Welcome to Your Vue.js App" />
-  </div>
+    <div>
+        <MainBanner :locations="locations" />
+    </div>
 </template>
 
-<script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
+<script setup>
+import { useLocationsStore } from '@/stores/locations';
+import MainBanner from '@/components/Home/MainBanner';
 
-export default {
-  name: "HomeView",
-  components: {
-    HelloWorld,
-  },
-};
+const locations = useLocationsStore();
+
+await locations.fetchCountries();
 </script>
