@@ -21,7 +21,7 @@ const finalLayout = computed(() => {
 
 <style lang="scss">
 #app {
-    font-family: 'AA Bebas Neue', Avenir, Helvetica, Arial, sans-serif;
+    font-family: 'Aeroport', Avenir, Helvetica, Arial, sans-serif;
     -webkit-font-smoothing: antialiased;
 }
 </style>
