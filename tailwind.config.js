@@ -7,6 +7,9 @@ module.exports = {
                 primary: '#D20442',
                 secondary: '#E1E1E1',
                 tertiary: '#8A8A8A'
+            },
+            fontFamily: {
+                highlight: 'AA Bebas Neue'
             }
         }
     },
