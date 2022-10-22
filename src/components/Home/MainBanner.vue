@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="relative">
-            <!-- <img class="banner-img w-screen" :src="banner" /> -->
+            <img class="banner-img w-screen" :src="banner" />
 
             <div
                 class="country-row absolute right-0 text-secondary flex flex-row py-20 pl-10"
@@ -60,7 +60,7 @@ const props = defineProps(['locations', 'country-selected']);
 
 console.log(props.locations);
 const countries = ref(props.locations.countries);
-// const banner = countries[0].photos[0].url;
+const banner = countries.value[0].banner;
 
 function selectCountry(countryId) {
     emit('country-selected', countryId);

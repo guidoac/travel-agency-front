@@ -2,8 +2,8 @@
     <div>
         <MainBanner
             :locations="locations"
-            @country-selected="selectCountry"
             :country-selected="countrySelected"
+            @country-selected="selectCountry"
         />
         <ToursList :tours="tours" :country-selected="countrySelected" />
     </div>
@@ -19,7 +19,6 @@ import MainBanner from '@/components/Home/MainBanner';
 import ToursList from '@/components/Home/ToursList';
 
 const locations = useLocationsStore();
-console.log(locations);
 await locations.fetchCountries();
 
 const tours = useToursStore();
