@@ -10,7 +10,12 @@ export const useLocationsStore = defineStore('locations', {
             const $api = inject('$api');
             const countries = await $api.get('/countries');
 
-            this.countries = countries.data;
+            this.countries = countries.data.data;
+        }
+    },
+    getters: {
+        getCountryById(id) {
+            return this.countries.find((country) => country.id === id);
         }
     }
 });
