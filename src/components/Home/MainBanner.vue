@@ -88,7 +88,7 @@ function selectCountry(countryId) {
 
 .social-media-row {
     a {
-        @apply hover:bg-primary px-3 py-2 rounded-lg transition-all hover:text-white;
+        @apply hover:bg-main-primary px-3 py-2 rounded-lg transition-all hover:text-white;
     }
 }
 </style>
