@@ -1,17 +1,16 @@
 <template>
-    <Suspense>
-        <component :is="layouts[finalLayout]" />
-    </Suspense>
+    <component :is="layouts[finalLayout]" />
 </template>
 
 <script setup>
-import DefaultLayout from '@/layouts/LayoutDefault';
 import { useRoute } from 'vue-router';
 import { computed } from 'vue';
 
+import LayoutDefault from '@/layouts/LayoutDefault';
+
 const route = useRoute();
 const layouts = {
-    default: DefaultLayout
+    default: LayoutDefault
 };
 
 const finalLayout = computed(() => {
