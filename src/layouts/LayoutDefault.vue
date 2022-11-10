@@ -1,7 +1,9 @@
 <template>
     <div class="max-w-screen-2xl h-screen flex items-stretch">
         <SideBar />
-        <router-view />
+        <div class="page-content">
+            <router-view />
+        </div>
     </div>
 </template>
 
