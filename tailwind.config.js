@@ -16,7 +16,8 @@ module.exports = {
                 'admin-primary-dark-2': '#295629',
                 'admin-secondary': '#747476',
                 'admin-secondary-light': '#bfbfc0',
-                'admin-secondary-lighter': '#efeff1'
+                'admin-secondary-light-2': '#efeff1',
+                'admin-secondary-light-3': '#f1f1f3'
             },
             fontFamily: {
                 highlight: 'AA Bebas Neue'

@@ -19,7 +19,8 @@ import {
     faEyeSlash,
     faDashboard,
     faCompass,
-    faGlobe
+    faGlobe,
+    faSearch
 } from '@fortawesome/free-solid-svg-icons';
 import {
     faFacebookF,
@@ -57,7 +58,8 @@ library.add(
     faEyeSlash,
     faDashboard,
     faCompass,
-    faGlobe
+    faGlobe,
+    faSearch
 );
 </script>
 

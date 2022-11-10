@@ -5,7 +5,11 @@
         </div>
 
         <div
-            class="flex grow justify-between p-4 bg-slate-50 rounded-2xl border border-admin-secondary-light shadow-sm hover:shadow-md transition-shadow ease items-center"
+            class="flex grow justify-between bg-slate-50 rounded-2xl border border-admin-secondary-light shadow-sm hover:shadow-md transition-shadow ease items-center"
+            :class="{
+                'p-4': size === 'normal',
+                'px-4 py-2': size === 'small'
+            }"
         >
             <div>
                 <slot name="left-icon" />
@@ -43,6 +47,12 @@ defineProps({
     modelValue: {
         type: String || Number,
         default: ''
+    },
+
+    size: {
+        type: String,
+        default: 'normal',
+        required: false
     }
 });
 
