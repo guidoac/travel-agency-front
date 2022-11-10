@@ -16,7 +16,10 @@ import {
     faEnvelope,
     faLock,
     faEye,
-    faEyeSlash
+    faEyeSlash,
+    faDashboard,
+    faCompass,
+    faGlobe
 } from '@fortawesome/free-solid-svg-icons';
 import {
     faFacebookF,
@@ -51,7 +54,10 @@ library.add(
     faEnvelope,
     faLock,
     faEye,
-    faEyeSlash
+    faEyeSlash,
+    faDashboard,
+    faCompass,
+    faGlobe
 );
 </script>
 
