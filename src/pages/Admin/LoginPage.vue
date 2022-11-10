@@ -2,10 +2,11 @@
     <div class="flex grow">
         <div class="bg-admin-primary-light flex-1 section">teste</div>
         <div class="bg-white flex-1 section">
-            <form @submit="submitLogin">
+            <div>
                 <BaseInput
+                    class="mb-4"
                     placeholder="Type your e-mail"
-                    type="email"
+                    type="text"
                     v-model="email"
                 >
                     <template #label> Email </template>
@@ -32,21 +33,41 @@
                         />
                     </template>
                 </BaseInput>
-            </form>
+
+                <BaseButton
+                    class="w-full mt-6"
+                    label="login"
+                    @click="submitLogin"
+                />
+
+                <p class="text-center mt-2">
+                    Need an account?
+                    <router-link :to="{ name: 'admin.register' }">
+                        Sign Up
+                    </router-link>
+                </p>
+            </div>
         </div>
     </div>
 </template>
 
 <script setup>
 import BaseInput from '@/components/Base/BaseInput';
+import BaseButton from '@/components/Base/BaseButton';
 import BaseIcon from '@/components/BaseIcon';
 
 import { ref } from '@vue/reactivity';
+import { useAuthStore } from '@/stores/auth';
 
-const email = ref('');
-const passwordViewed = ref(false);
+let passwordViewed = ref(false);
+let email = ref('');
+let password = ref('');
 
-const submitLogin = async () => {};
+const auth = useAuthStore();
+
+async function submitLogin() {
+    await auth.signIn(email.value, password.value);
+}
 </script>
 
 <style lang="scss" scoped>
