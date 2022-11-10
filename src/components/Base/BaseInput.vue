@@ -11,10 +11,10 @@
                 <slot name="left-icon" />
                 <input
                     class="mx-2"
-                    :placeholder="props.placeholder"
-                    :type="props.type"
-                    :value="props.value"
-                    @input="$emit('input', $event.target.value)"
+                    :placeholder="placeholder"
+                    :type="type"
+                    :value="modelValue"
+                    @input="updateValue"
                 />
             </div>
             <slot name="right-icon" class="self-end" />
@@ -23,9 +23,11 @@
 </template>
 
 <script setup>
-import { defineProps } from 'vue';
+import { defineProps, defineEmits } from 'vue';
 
-const props = defineProps({
+const emit = defineEmits(['update:modelValue']);
+
+defineProps({
     type: {
         type: String,
         default: 'text',
@@ -38,11 +40,15 @@ const props = defineProps({
         required: false
     },
 
-    value: {
+    modelValue: {
         type: String || Number,
         default: ''
     }
 });
+
+const updateValue = (event) => {
+    emit('update:modelValue', event.target.value);
+};
 </script>
 
 <style lang="scss" scoped></style>
