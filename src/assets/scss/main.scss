@@ -3,9 +3,18 @@
 @tailwind utilities;
 
 @import './fonts';
+@import './form';
 
 input {
     &:focus {
         @apply outline-none;
+    }
+}
+
+a {
+    @apply text-admin-primary-dark transition-colors;
+
+    &:hover {
+        @apply text-admin-primary-dark-2;
     }
 }
