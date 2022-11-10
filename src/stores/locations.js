@@ -1,5 +1,5 @@
 import { defineStore } from 'pinia';
-import { inject } from 'vue';
+import plugin from '@/plugins/http';
 
 export const useLocationsStore = defineStore('locations', {
     state: () => ({
@@ -7,8 +7,7 @@ export const useLocationsStore = defineStore('locations', {
     }),
     actions: {
         async fetchCountries() {
-            const $api = inject('$api');
-            const countries = await $api.get('/countries');
+            const countries = await plugin.$api.get('/countries');
 
             this.countries = countries.data.data;
         }
